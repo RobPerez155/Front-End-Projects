@@ -1,0 +1,66 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #042104;
+  animation: animateBg 10s linear infinite;
+}
+/* Below will cycle through the color wheel over 10sec*/
+@keyframes animateBg{
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}
+section .loader{
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+section .loader span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* 18deg * 20 = 360deg, in other words a circle */
+  transform: rotate(calc(18deg * var(--i)))
+}
+/* Below is the code for our dot */
+section .loader span::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #0084ff;
+  /* box-shadow here gives a circular shadow around our square object */
+  box-shadow: 0 0 10px #0084ff,
+              0 0 20px #0084ff,
+              0 0 40px #0084ff,
+              0 0 60px #0084ff,
+              0 0 80px #0084ff,
+              0 0 100px #0084ff;
+  animation: animate 2s linear infinite;
+  /* Below is what makes are dots grow from small to large, which ultimately gives the illusion of a chasing tail */
+  animation-delay: calc(0.1s * var(--i));
+}
+/* pulses the dots - @0% it goes to 100% dot size and vice versa */
+@keyframes animate{
+  0%{
+    transform: scale(1);
+  }
+  80%, 100%{
+    transform: scale(0);
+  }
+}
