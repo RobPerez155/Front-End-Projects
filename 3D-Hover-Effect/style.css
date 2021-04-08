@@ -1,0 +1,18 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: #f1f1f1;
+}
+.center{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.box{
+  position: relative;
+  width: 400px;
+  height: 200px;
+  transform: perspective(500px) rotate(-40deg) skew(25deg);
+  box-shadow: -90px 75px 20px rgba(0,0,0,.3); /* +/- in 90 & 75 dictates the direction of the shadow and 20 gives us a blurry/wider edge whereas 0 makes the shadow very sharp and 200 makes it wider/blurrier*/
+}
