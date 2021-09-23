@@ -38,9 +38,23 @@
   66% {
     transform: translateX(100%) translateY(100%);
   }
-  
+
   100% {
     transform: translateX(100%);
   }
+
+}
+
+.position_notes {
+  /* position: static is the default */
+
+  /* position: relative; Moves an element relative to where it should be, never used with left, right, top, or bottom. it complicates the html because it moves the element without adjusting surrounding elements */
+  
+  /* position: absolute; Removes the element out of the document flow and everything else renders as if that element wasn't there. Allows you to move an element without altering the workflow*/
+  /* To render an element absolutely within a parent, the parent must include (position: relative) inside of it. Otherwise the element will fallback to the next parent w/ a position other than static, if there are none then it will default to the document itself*/
+
+  /* position: fixed: Removes the element completely from the html doc and anchors it to the screen, even while scrolling */
+
+  /* position: sticky: Similar to relative and fixed positioning. By default it is relative, but as soon as it scrolls out of the page it becomes fixed*/
 
 }
