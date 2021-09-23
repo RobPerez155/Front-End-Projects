@@ -1,0 +1,34 @@
+/* animations should be scoped for 60 fps */
+/* Optimizing animation performance
+    - Height is a very expensive property because it affects layout, when height shrinks it causes a chain reaction, all of its siblings need to move up
+    - background-color is somewhat expensive, while it doesn't affect layout it does a fresh coat of paint on every frame
+    - transform and opacity, are somewhat cheap to animate. If an animation currently tweaks a property like width of left, it can be greatly improved by moving it to transform, though it's not always possible to garner the same effect
+    - Test your animations on the lowest end device that your site/app targets. */
+
+.btn {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: none;
+  background: slateblue;
+  color: white;
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 50px;
+
+  transition: transform 250ms, opacity 400ms;
+}
+
+.btn:hover {
+  /* transform: translateY(-30px); */
+  transform: scale(.8);
+  opacity: 0;
+}
+
+/* ease-out - ramps in and eases out, good for elements moving into the viewport*/
+/* ease-in - eases in ramps out, good for elements moving out of the viewport*/
+/* ease-in-out - symmetrical in timing, good for elements in a loop */
+/* ease - brief ramp up and a LOT of deceleration, good if element moves and isn't entering or exiting viewport */
+
+/* transition-delay is a great tool for dropdown menus, they can prevent a tab from closing when the user's cursor dips out of bounds as it moves to the opened menu */

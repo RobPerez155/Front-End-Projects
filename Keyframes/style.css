@@ -1,0 +1,46 @@
+/* https://www.educative.io/blog/animate-css-code */
+/* https://www.youtube.com/watch?v=YszONjKpgg4 */
+
+.parent {
+  background-color: hsla(200, 100%, 20%);
+  height: 400px;
+  width: 400px;
+}
+
+.child {
+  background-color: crimson;
+  height: 50%;
+  width: 50%;
+  
+  animation-name: left-to-right;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  /* Shorthand of the above */
+  /* animation: left-to-right 1s ease-in forwards infinite alternate; */
+}
+
+.parent:hover .child {
+  animation-play-state: paused;
+}
+
+@keyframes left-to-right {
+  0% {
+    transform: translateX(0);
+  }
+  
+  33% {
+    transform: translateY(100%);
+  }
+
+  66% {
+    transform: translateX(100%) translateY(100%);
+  }
+  
+  100% {
+    transform: translateX(100%);
+  }
+
+}
