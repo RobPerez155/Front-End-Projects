@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interview</title>
+
+  <style>
+    .btn {
+      width: 150px;
+      height: 50px;
+      border-radius: 4px;
+      display: block;
+      margin: 150px auto 0 auto;
+      background-color: red;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      background-color: white;
+      color: red;
+    }
+
+    .text {
+      display: none;
+    }
+
+    .show {
+      display: contents;
+    }
+
+    .boxes {
+      display: flex;
+    }
+
+    
+    .box {
+      height: 150px;
+      width: 150px;
+      background-color: blue ;
+      margin: 1rem;
+    }
+    
+    @media screen and (min-width: 500px){
+      .boxes{
+        flex-direction: column;
+      }
+
+      .box{
+        background-color: red;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="boxes">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+
+  <button class="btn">
+    Text Here
+  </button>
+  <h1 class="text">I'm clicked</h1>
+</body>
+
+  <script>    
+    let btn = document.querySelector('.btn')
+    let text = document.querySelector('.text')
+
+    btn.addEventListener('click', () => {
+      text.classList.toggle('show')
+    })
+  </script>
+</html>

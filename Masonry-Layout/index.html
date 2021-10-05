@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Masonry Layout</title>
+    <style>
+      :root {
+        --card_width: 250px;
+        --card_border_radius: 16px;
+        --row_increment: 10px;
+        --card_small: 26;
+        --card_medium: 33;
+        --card_large: 45;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: lightslategray;
+      }
+
+      .pin_container {
+        margin: 0;
+        padding: 0;
+        width: 80vw;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, var(--card_width)); /* This will autofill items to the card width of 250px */
+        grid-auto-rows: var(--row_increment); /* sets row height to 10px*/
+        justify-content: center;
+
+        background-color: #3c3c3c;
+      }
+
+      .card {
+        padding: 0px;
+        margin: 15px 10px; /* Sets margin 15px left and right && 10px Up and down */
+        border-radius: var(--card_border_radius);
+
+        /* background-color: maroon; */
+      }
+
+      .card_small {
+        grid-row-end: span var(--card_small);
+        background-color: maroon;
+      } /* This says to span 26 rows, in other words this makes our card 26 rows thick and 26 * 10px = 260px tall*/
+
+      .card_medium {
+        grid-row-end: span var(--card_medium);
+        background-color: maroon;
+      }
+
+      .card_large {
+        grid-row-end: span var(--card_large);
+        background-color: maroon;
+      }
+
+      .bar {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        margin: 15px;
+      }
+
+      button {
+        width: 250px;
+        height: 100px;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: maroon;
+        opacity: 50%;
+        color: white;
+      }
+
+      .card:hover {
+        cursor: pointer;
+        background-color: pink;
+        color: white;
+      }  
+    </style>
+
+    <!-- Scripts -->
+    <script>
+
+      function selectedBox(size) {
+        sizeArr = document.querySelectorAll(`.card_${size}`)
+        // for (var i = 0; i < sizeArr.length; i++) {
+          // Is the background maroon? True turn blue : False turn maroon
+          // sizeArr[i].style.background == 'maroon' ? sizeArr[i].style.background = 'blue' : sizeArr[i].style.background = 'maroon'
+        // }
+        sizeArr.forEach(i => i.style.background == 'maroon' ? i.style.background = 'blue' : i.style.background = 'maroon')
+      }
+    </script>
+
+  </head>
+  <body>
+    <div class="bar">
+      <button onclick="selectedBox('small')"> Select Smalls</button>
+      <button onclick="selectedBox('medium')"> Select Medium</button>
+      <button onclick="selectedBox('large')"> Select Large</button>
+    </div>
+    <div class="pin_container">
+      <div class="card card_medium"></div>
+      <div class="card card_small"></div>
+      <div class="card card_medium"></div>
+      <div class="card card_large"></div>
+      <div class="card card_small"></div>
+      <div class="card card_medium"></div>
+      <div class="card card_small"></div>
+      <div class="card card_large"></div>
+      <div class="card card_large"></div>
+      <div class="card card_medium"></div>
+      <div class="card card_small"></div>
+      <div class="card card_medium"></div>
+      <div class="card card_large"></div>
+      <div class="card card_small"></div>
+      <div class="card card_medium"></div>
+      <div class="card card_small"></div>
+      <div class="card card_large"></div>
+      <div class="card card_large"></div>
+    </div>
+  </body>
+</html>

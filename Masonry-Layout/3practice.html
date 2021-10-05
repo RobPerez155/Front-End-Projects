@@ -1,0 +1,95 @@
+<!-- Create 
+- Masonry Grid
+  - create masonry div and boxes in HTML
+  - style boxes -> style masonry boxes -> organize masonry into columns
+
+- Drop down menu to highlight
+  - Add dropdown class - button and links in HTML
+  - Add CSS to content add hidden
+  - Create onclick event
+
+- Create form
+- Highlight boxes
+-----
+- Animate a spinning box
+- Add incrementor 
+- add to an array -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 3</title>
+
+  <style>
+    .small {
+      height: 122px;
+      line-height: 122px;
+    }
+
+    .medium {
+      height: 220px;
+      line-height: 220px;
+    }
+
+    .large {
+      height: 391px;
+      line-height: 391px;
+    }
+
+    .masonry {
+      columns: 200px 6;
+    }
+
+    .masonry div {
+      width: 150px;
+      background-color: dodgerblue;
+      margin: 0 1rem 1rem 0;
+      width: 100%;
+      display: inline-block;
+    }
+
+    .content {
+      display: none;
+    }
+
+    .show {
+      display: inline-block;
+    }
+  </style>
+
+  <script>
+    function myFunction() {
+      document.getElementById('content').classList.toggle('show')
+    }
+  </script>
+
+</head>
+<body>
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Button</button>
+    <div id="content" class="content">
+      <a href="#" >Link 1</a>
+      <a href="#" >Link 2</a>
+      <a href="#" >Link 3</a>
+    </div>
+  </div>
+      <div class="masonry">
+      <div class="small">1</div>
+      <div class="large">2</div>
+      <div class="medium">3</div>
+      <div class="large">4</div>
+      <div class="small">5</div>
+      <div class="small">1</div>
+      <div class="large">2</div>
+      <div class="medium">3</div>
+      <div class="large">4</div>
+      <div class="medium">5</div>
+      <div class="small">1</div>
+      <div class="small">2</div>
+      <div class="medium">3</div>
+      <div class="large">4</div>
+      <div class="small">5</div>
+    </div>
+</body>
+</html>

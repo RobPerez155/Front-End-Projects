@@ -1,0 +1,123 @@
+<!-- Run Drills Here -->
+<!-- Build functional buttons -->
+<!-- Build a button that iterates through an array of colors and changes the background to the current color. Also allow input to add to the array of colors -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Button</title>
+  <style>
+    button:hover {
+      cursor: pointer;
+    }
+
+    /* Sets up "canvas" */
+    body {
+      margin: 0;
+      padding: 1rem;
+    }
+
+    .masonry-with-columns {
+      columns: 6 200px; /* Sets column width 200px with up to 6 columns */
+      column-gap: 1rem;
+    }
+
+    .masonry-with-columns div {
+      width: 150px; /* sets minimum width */
+      background-color: yellowgreen;
+      color: white;
+      margin: 0 1rem 1rem 0; /* creates margin border to separate boxes */
+      display: inline-block; /* Inline - tells elements to wrap and stay side by side and Block - uses width and height*/
+      width: 100%;
+      text-align: center;
+    }
+
+    .square0 {
+      height: 328px;
+      line-height: 328px; /* sets the distance between lines of text */
+      /* background-color is not needed, it is added in .masonry-with-columns div{} */
+    }
+
+    .square1 {
+      height: 328px;
+      line-height: 328px;
+    }
+
+    .square2 {
+      height: 220px;
+      line-height: 220px;
+    }
+
+    .square3 {
+      height: 391px;
+      line-height: 391px;
+    }
+
+    .square4 {
+      height: 280px;
+      line-height: 280px;
+    }
+
+    .square5 {
+      height: 122px;
+      line-height: 122px;
+    }
+ 
+
+  </style>
+</head>
+<body>
+  <button>Poke Me</button>
+  <div class="masonry-with-columns">
+    <div class='square0'>
+      1
+    </div>
+    <div class='square1'>
+      2
+    </div>
+    <div class='square2'>
+      3
+    </div>
+    <div class='square3'>
+      4
+    </div>
+    <div class='square4'>
+      5
+    </div>
+    <div class='square5'>
+      6
+    </div>
+    <div>
+      7
+    </div>
+    <div>
+      8
+    </div>
+    <div>
+      9
+    </div>
+    <div>
+      10
+    </div>
+    <div>
+      11
+    </div>
+    <div>
+      12
+    </div>
+    <div>
+      13
+    </div>
+    <div>
+      14
+    </div>
+    <div>
+      15
+    </div>
+  </div>
+  <script>
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!-- Create 
+- Masonry Grid
+  - create masonry div and boxes in HTML
+  - style boxes -> style masonry boxes -> organize masonry into columns
+
+- Drop down menu to highlight
+  - Add dropdown class - button and links in HTML
+  - Add CSS to content add hidden
+  - Create onclick event
+
+- Create form
+- Highlight boxes
+-----
+- Animate a spinning box
+- Add incrementor 
+- add to an array -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Practice Two</title>
+
+    <style>
+    .small {
+      height: 122px;
+      line-height: 122px;
+    }
+
+    .medium {
+      height: 220px;
+      line-height: 220px;
+    }
+
+    .large {
+      height: 391px;
+      line-height: 391px;
+    }
+
+    .masonry div {
+      width: 150px;
+      background-color: teal;
+      margin: 0 1rem 1rem 0;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .masonry div:hover {
+      background-color: yellow;
+    }
+
+    .masonry {
+      columns: 200px 6;
+    }
+
+    .content {
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+
+    </style>
+
+    <script>
+      function myFunction() {
+        document.getElementById("id").classList.toggle("show")
+      }
+    </script>
+  </head>
+  <body>
+
+    <div class="dropdown">
+      <button onclick="myFunction()" class="drpbtn">
+        Dropdown
+      </button>
+      <div id="id" class="content">
+        <a href="#" onclick="selectBoxes('small')" id="small">Small</a>
+        <a href="#" onclick="selectBoxes('medium')" id="medium">Medium</a>
+        <a href="#" onclick="selectBoxes('large')" id="large">Large</a>
+      </div>
+    </div>
+
+    <div class="masonry">
+      <div class="small">1</div>
+      <div class="large">2</div>
+      <div class="medium">3</div>
+      <div class="large">4</div>
+      <div class="small">5</div>
+      <div class="small">1</div>
+      <div class="large">2</div>
+      <div class="medium">3</div>
+      <div class="large">4</div>
+      <div class="medium">5</div>
+      <div class="small">1</div>
+      <div class="small">2</div>
+      <div class="medium">3</div>
+      <div class="large">4</div>
+      <div class="small">5</div>
+    </div>
+  </body>
+</html>

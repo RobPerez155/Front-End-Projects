@@ -1,0 +1,14 @@
+Start
+HTML
+1 - Create new html page
+  - Create div in <body> This allows me to test new style
+2 - Create <style> - to set up EVERYTHING
+  - Use :root pseudoclass (to control the styling in a specific state)
+    - Create box shape and dimensions
+    - remove margin and padding from body, it gives us a giant box to work in
+    - Create pin_container - this will hold all the pins
+    - Create card 
+      - use grid-row-end to set the card's height
+
+3 - Create onclick event
+

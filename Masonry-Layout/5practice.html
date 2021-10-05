@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+  .sm {
+    height: 120px;
+    width: 120px;
+  }
+  .med {
+    height: 240px;
+    width: 240px;
+  }
+  .lg {
+    height: 400px;
+    width: 400px;
+  }
+
+  .masonry {
+    columns: 250px 6;
+  }
+
+  .masonry div {
+    width: 150px;
+    margin: 0 1rem 1rem 0;
+    background-color: orangered;
+    width: 100%;
+  }
+
+  .content {
+    display: none;
+  }
+
+  .show {
+    display: inline-block;
+  }
+
+  .square {
+    height: 100px;
+    width: 100px;
+    background-color: orchid;
+    margin: 15px;
+  }
+
+  .rotate {
+    transition: 3s;
+    transform: rotate(540deg) scale(2);
+  }
+  </style>
+
+  <script>
+    function myFunc() {
+      document.getElementById('id').classList.toggle('show')
+    }
+
+    function spin() {
+      document.getElementById('sq').classList.toggle('rotate')
+    }
+
+    function selectedBox(size) {
+        sizeArr = document.querySelectorAll(`.card_${size}`)
+        for (var i = 0; i < sizeArr.length; i++) {
+          // Is the background maroon? True turn blue : False turn maroon
+          sizeArr[i].style.background == 'maroon' ? sizeArr[i].style.background = 'blue' : sizeArr[i].style.background = 'maroon'
+        }
+        sizeArr.forEach(i => i.style.background == 'maroon' ? i.style.background = 'blue' : i.style.background = 'maroon')
+      }
+  </script>
+
+  <title>Practice 5</title>
+</head>
+<body>
+  <div class="dropdown">
+    <button onclick="myFunc()" class="dropbtn">Click Me!</button>
+    <div id='id' class="content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div onclick="spin()" id='sq' class="square"></div>
+  <div class="masonry">
+    <div class="med"></div>
+    <div class="sm"></div>
+    <div class="med"></div>
+    <div class="lg"></div>
+    <div class="sm"></div>
+    <div class="sm"></div>
+    <div class="lg"></div>
+    <div class="sm"></div>
+    <div class="med"></div>
+    <div class="lg"></div>
+    <div class="med"></div>
+    <div class="lg"></div>
+    <div class="sm"></div>
+    <div class="lg"></div>
+    <div class="med"></div>
+    <div class="sm"></div>
+    <div class="med"></div>
+    <div class="lg"></div>
+  </div>
+</body>
+</html>

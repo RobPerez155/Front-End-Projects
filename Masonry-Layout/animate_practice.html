@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animation</title>
+
+    <style>
+      .box {
+        height: 150px;
+        width: 150px;
+        background-color: dodgerblue;
+        margin: 15px;
+      }
+
+      .box.horizontalTranslate {
+        transition: 3s;
+        margin-left: 50% !important;
+      }
+    </style>
+
+    <script>
+      function myFunc() {
+        var box = document.getElementsByClassName("box")[0];
+        var toggle = document.getElementsByClassName("toggleButton")[0];
+        console.log(toggle.innerHTML);
+        if (toggle.innerHTML === "Play") {
+          toggle.innerHTML = "Restart";
+          box.classList.add("horizontalTranslate");
+        } else {
+          toggle.innerHTML = "Play";
+          box.classList.remove("horizontalTranslate")
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <h3>Square Run</h3>
+    <div class="box"></div>
+    <button onclick="myFunc()" class="toggleButton" value="play">Play</button>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+  <script>
+    function favStuff() {
+      var myList = document.getElementById(myList);
+      // This will add value to the text box
+      document.getElementById("favorite").value = myList.options[myList.selectedIndex].text
+    }
+  </script>
+  <body>
+    <form>
+      Select Stuff
+      <select id="myList" onchange='favStuff()'>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+      </select>
+      
+      <p> You picked <input type="text" id="favorite" size="20"></input></p>
+    </form>
+  </body>
+</html>
